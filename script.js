@@ -88,8 +88,22 @@ const gameController = (() => {
 })();
 
 const displayController = (() => {
+    let startMenu = document.querySelector('.start-menu');
+    let start = document.querySelector('.start');
+    let gameBoardContainer = document.querySelector('.gameboard');
     let resultMessage = document.querySelector('.result-turn-text');
-    let btns = document.querySelectorAll('.board-square');
+    let btns = document.querySelectorAll('.board-square');    
+
+    start.addEventListener('click', () => {
+        start.style.transform = 'scale(0)';
+        resultMessage.style.opacity = 1;
+        resultMessage.style.transform = 'scale(1)';
+        start.style.opacity = 0;
+        gameBoardContainer.style.opacity = 1;
+        gameBoardContainer.style.transform = 'scale(1)';
+        startMenu.style.top = '120px';
+    });
+
     btns.forEach((btn) =>
         btn.addEventListener('click', () => {
             gameController.playRound(btn.id - 1);
@@ -124,7 +138,8 @@ const displayController = (() => {
 
     let gameRestart = () => {
         let restartBtn = document.querySelector('.restart');
-        restartBtn.style.display = 'block';
+        restartBtn.style.opacity = 1;
+        restartBtn.style.transform = 'scale(1)';
 
         restartBtn.addEventListener('click', () => {
             gameController.reset();
@@ -137,7 +152,8 @@ const displayController = (() => {
                 btn.textContent = ''
             )
 
-            restartBtn.style.display = 'none';
+            restartBtn.style.opacity = 0;
+            restartBtn.style.transform = 'scale(0)';
         });
     };
     return { updateBoard, updateWinnerDrawMessage, turnInfo };

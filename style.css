@@ -1,60 +1,162 @@
+.start-animation {
+  top: 5vh;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #e3eef3;
+  background-image: linear-gradient(120deg, hsl(199deg, 45%, 90%), #ffdde1);
   min-height: 100vh;
 }
-.container .result-turn-text {
+.container .start-menu {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  position: absolute;
+  top: 40vh;
+  transition: top 0.5s linear;
+}
+.container .start-menu .title {
+  font-weight: 700;
+  display: inline-block;
+  font-size: 4.5rem;
+  color: #fff;
+}
+.container .start-menu .title span {
+  -webkit-animation: move 3s ease-in-out infinite;
+          animation: move 3s ease-in-out infinite;
+}
+@-webkit-keyframes move {
+  50% {
+    color: hsl(353deg, 100%, 98%);
+    text-shadow: 4.4px 6.5px 5.1px hsla(324deg, 14%, 38%, 0.2);
+  }
+}
+@keyframes move {
+  50% {
+    color: hsl(353deg, 100%, 98%);
+    text-shadow: 4.4px 6.5px 5.1px hsla(324deg, 14%, 38%, 0.2);
+  }
+}
+.container .start-menu .title span:nth-child(2) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.container .start-menu .title span:nth-child(3) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.container .start-menu .title span:nth-child(4) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+.container .start-menu .title span:nth-child(5) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.container .start-menu .title span:nth-child(6) {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+.container .start-menu .title span:nth-child(7) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.container .start-menu .title span:nth-child(8) {
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+.container .start-menu .title span:nth-child(9) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+.container .start-menu .start-btn {
+  display: flex;
+  justify-content: center;
+}
+.container .start-menu .start-btn .start {
+  font-weight: 700;
+  text-shadow: 1.4px 1.5px 2.1px hsla(324deg, 14%, 38%, 0.2);
+  width: 200px;
+  padding: 2px 0;
+  margin: 7px;
+  border: none;
+  color: rgb(255, 189, 189);
+  background-color: hsl(353deg, 100%, 99%);
+  border-radius: 10px;
+  box-shadow: 4.4px 4.5px 5.1px hsla(324deg, 14%, 38%, 0.2);
+}
+.container .start-menu .start-btn .start:hover {
+  box-shadow: 4.4px 6.5px 5.1px hsla(324deg, 14%, 38%, 0.2);
+}
+.container .start-menu .start-btn .start:active {
+  background-color: hsl(353deg, 80%, 92%);
+}
+.container .game-container {
+  display: flex;
+  flex-direction: column;
+}
+.container .game-container .result-turn-text {
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.9s ease opacity, 0.9s ease transform;
+  color: #fff;
   font-size: 1.2rem;
+  font-weight: 700;
   height: 20px;
   width: 360px;
-  transition: 0.4s;
 }
-.container .gameboard {
+.container .game-container .gameboard {
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.9s ease opacity, 0.9s ease transform;
   display: flex;
   flex-flow: row wrap;
   width: 360px;
   height: 360px;
   margin: 3vh 2vw;
 }
-.container .gameboard button {
+.container .game-container .gameboard button {
   font-size: 3rem;
   height: 110px;
   width: 110px;
   margin: 5px;
   border: none;
+  color: hsla(324deg, 14%, 38%, 0.2);
   background-color: #fff;
   border-radius: 10px;
-  cursor: pointer;
   transition: 0.3s;
-  box-shadow: 0.1px 0.9px 0.8px hsla(199deg, 14%, 58%, 0.4), 0.2px 1.6px 1.5px -1px hsla(199deg, 14%, 58%, 0.35), 0.5px 3.4px 3.1px -2px hsla(199deg, 14%, 58%, 0.29), 1.2px 7.9px 7.3px -3px hsla(199deg, 14%, 58%, 0.23), 2.4px 16.5px 15.1px -3.9px hsla(199deg, 14%, 58%, 0.17);
+  box-shadow: 4.4px 4.5px 5.1px hsla(324deg, 14%, 38%, 0.2);
 }
-.container .gameboard button:hover {
-  box-shadow: 0.1px 0.9px 0.7px hsla(199deg, 14%, 58%, 0.4), 0.1px 1px 0.8px -0.6px hsla(199deg, 14%, 58%, 0.36), 0.2px 1.6px 1.2px -1.1px hsla(199deg, 14%, 58%, 0.32), 0.5px 3.3px 2.5px -1.7px hsla(199deg, 14%, 58%, 0.28), 1px 6.6px 5px -2.2px hsla(199deg, 14%, 58%, 0.24), 1.7px 12px 9.1px -2.8px hsla(199deg, 14%, 58%, 0.2), 2.9px 20px 15.2px -3.3px hsla(199deg, 14%, 58%, 0.16);
+.container .game-container .gameboard button:hover {
+  box-shadow: 4.4px 6.5px 5.1px hsla(324deg, 14%, 38%, 0.2);
 }
-.container .gameboard button:active {
-  background-color: hsl(199deg, 40%, 82%);
+.container .game-container .gameboard button:active {
+  background-color: hsl(353deg, 80%, 92%);
 }
 .container .buttons {
   height: 25px;
 }
 .container .buttons .restart {
-  display: none;
-  padding: 2px 40px;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.4s ease opacity, 0.4s ease transform;
+  font-weight: 700;
+  text-shadow: 1.4px 1.5px 2.1px hsla(324deg, 14%, 38%, 0.2);
+  width: 200px;
+  padding: 2px 0;
+  margin: 7px;
   border: none;
-  background-color: #fff;
-  transition: 0.3s;
-  box-shadow: 0.1px 0.9px 0.8px hsla(199deg, 14%, 58%, 0.4), 0.2px 1.6px 1.5px -1px hsla(199deg, 14%, 58%, 0.35), 0.5px 3.4px 3.1px -2px hsla(199deg, 14%, 58%, 0.29), 1.2px 7.9px 7.3px -3px hsla(199deg, 14%, 58%, 0.23), 2.4px 16.5px 15.1px -3.9px hsla(199deg, 14%, 58%, 0.17);
-  border-radius: 5px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin: 10px;
+  color: rgb(255, 189, 189);
+  background-color: hsl(353deg, 100%, 99%);
+  border-radius: 10px;
+  box-shadow: 4.4px 4.5px 5.1px hsla(324deg, 14%, 38%, 0.2);
 }
 .container .buttons .restart:hover {
-  box-shadow: 0.1px 0.9px 0.7px hsla(199deg, 14%, 58%, 0.4), 0.1px 1px 0.8px -0.6px hsla(199deg, 14%, 58%, 0.36), 0.2px 1.6px 1.2px -1.1px hsla(199deg, 14%, 58%, 0.32), 0.5px 3.3px 2.5px -1.7px hsla(199deg, 14%, 58%, 0.28), 1px 6.6px 5px -2.2px hsla(199deg, 14%, 58%, 0.24), 1.7px 12px 9.1px -2.8px hsla(199deg, 14%, 58%, 0.2), 2.9px 20px 15.2px -3.3px hsla(199deg, 14%, 58%, 0.16);
+  box-shadow: 4.4px 6.5px 5.1px hsla(324deg, 14%, 38%, 0.2);
 }
 .container .buttons .restart:active {
-  background-color: hsl(199deg, 40%, 82%);
+  background-color: hsl(353deg, 80%, 92%);
 }/*# sourceMappingURL=style.css.map */
