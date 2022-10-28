@@ -92,12 +92,12 @@ const displayController = (() => {
     let start = document.querySelector('.start');
     let gameBoardContainer = document.querySelector('.gameboard');
     let resultMessage = document.querySelector('.result-turn-text');
-    let btns = document.querySelectorAll('.board-square');    
+    let btns = document.querySelectorAll('.board-square');
 
     start.addEventListener('click', () => {
-        start.style.transform = 'scale(0)';
-        resultMessage.style.opacity = 1;
         resultMessage.style.transform = 'scale(1)';
+        resultMessage.style.opacity = 1;
+        start.style.transform = 'scale(0)';
         start.style.opacity = 0;
         gameBoardContainer.style.opacity = 1;
         gameBoardContainer.style.transform = 'scale(1)';
